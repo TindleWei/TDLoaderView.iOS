@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "TDLoaderView.h"
+#import "TDProgressHUD.h"
 
 @interface ViewController ()
 
@@ -18,8 +19,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self alert2];
+    self.view.backgroundColor = [UIColor redColor];
     
+//    [self alert2];
+    
+    
+    
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [TDProgressHUD show];
+    
+    [TDProgressHUD showWithStatus:@"Doing Stuff"];
 }
 
 - (void)alert2
@@ -55,6 +66,45 @@
 //    };
     
     [alertView show];
+    
 }
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
+    return YES;
+}
+
+
+#pragma mark - Notification Methods Sample
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(handleNotification:)
+                                                 name:SVProgressHUDWillAppearNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(handleNotification:)
+                                                 name:SVProgressHUDDidAppearNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(handleNotification:)
+                                                 name:SVProgressHUDWillDisappearNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(handleNotification:)
+                                                 name:SVProgressHUDDidDisappearNotification
+                                               object:nil];
+}
+
+- (void)handleNotification:(NSNotification *)notif
+{
+    NSLog(@"Notification recieved: %@", notif.name);
+    NSLog(@"Status user info key: %@", [notif.userInfo objectForKey:SVProgressHUDStatusUserInfoKey]);
+}
+
 
 @end

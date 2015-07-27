@@ -22,6 +22,9 @@
 		1F8A66EB1B6516A200F3380A /* TDLoaderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A66EA1B6516A200F3380A /* TDLoaderController.m */; };
 		1F8A66EE1B65C27700F3380A /* TDLoaderBackgroundWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A66ED1B65C27700F3380A /* TDLoaderBackgroundWindow.m */; };
 		1F8A66F11B65C4E300F3380A /* TDLoaderButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A66F01B65C4E300F3380A /* TDLoaderButtonItem.m */; };
+		1F8A66F51B65C79E00F3380A /* TDProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A66F41B65C79E00F3380A /* TDProgressView.m */; };
+		1F8A66F81B66238100F3380A /* TDProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A66F71B66238100F3380A /* TDProgressHUD.m */; };
+		1F8A66FA1B663B1300F3380A /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1F8A66F91B663B1300F3380A /* SVProgressHUD.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +63,11 @@
 		1F8A66ED1B65C27700F3380A /* TDLoaderBackgroundWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDLoaderBackgroundWindow.m; sourceTree = "<group>"; };
 		1F8A66EF1B65C4E300F3380A /* TDLoaderButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDLoaderButtonItem.h; sourceTree = "<group>"; };
 		1F8A66F01B65C4E300F3380A /* TDLoaderButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDLoaderButtonItem.m; sourceTree = "<group>"; };
+		1F8A66F31B65C79E00F3380A /* TDProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDProgressView.h; sourceTree = "<group>"; };
+		1F8A66F41B65C79E00F3380A /* TDProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDProgressView.m; sourceTree = "<group>"; };
+		1F8A66F61B66238100F3380A /* TDProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDProgressHUD.h; sourceTree = "<group>"; };
+		1F8A66F71B66238100F3380A /* TDProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDProgressHUD.m; sourceTree = "<group>"; };
+		1F8A66F91B663B1300F3380A /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +156,8 @@
 		1F8A66DB1B6229D500F3380A /* TDLoaderView */ = {
 			isa = PBXGroup;
 			children = (
+				1F8A66F91B663B1300F3380A /* SVProgressHUD.bundle */,
+				1F8A66F21B65C78300F3380A /* Progress */,
 				1F8A66DC1B622A2500F3380A /* TDLoaderView.h */,
 				1F8A66DD1B622A2500F3380A /* TDLoaderView.m */,
 				1F8A66E91B6516A200F3380A /* TDLoaderController.h */,
@@ -169,6 +179,17 @@
 				1F8A66DF1B64E7A400F3380A /* QuartzCore.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1F8A66F21B65C78300F3380A /* Progress */ = {
+			isa = PBXGroup;
+			children = (
+				1F8A66F31B65C79E00F3380A /* TDProgressView.h */,
+				1F8A66F41B65C79E00F3380A /* TDProgressView.m */,
+				1F8A66F61B66238100F3380A /* TDProgressHUD.h */,
+				1F8A66F71B66238100F3380A /* TDProgressHUD.m */,
+			);
+			path = Progress;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,6 +275,7 @@
 				1F8A66C11B62291500F3380A /* Main.storyboard in Resources */,
 				1F8A66C61B62291500F3380A /* LaunchScreen.xib in Resources */,
 				1F8A66C31B62291500F3380A /* Images.xcassets in Resources */,
+				1F8A66FA1B663B1300F3380A /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +296,8 @@
 				1F8A66BE1B62291500F3380A /* ViewController.m in Sources */,
 				1F8A66BB1B62291500F3380A /* AppDelegate.m in Sources */,
 				1F8A66EB1B6516A200F3380A /* TDLoaderController.m in Sources */,
+				1F8A66F81B66238100F3380A /* TDProgressHUD.m in Sources */,
+				1F8A66F51B65C79E00F3380A /* TDProgressView.m in Sources */,
 				1F8A66B81B62291500F3380A /* main.m in Sources */,
 				1F8A66EE1B65C27700F3380A /* TDLoaderBackgroundWindow.m in Sources */,
 				1F8A66F11B65C4E300F3380A /* TDLoaderButtonItem.m in Sources */,
