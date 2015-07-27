@@ -1,0 +1,487 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1F8A66B81B62291500F3380A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A66B71B62291500F3380A /* main.m */; };
+		1F8A66BB1B62291500F3380A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A66BA1B62291500F3380A /* AppDelegate.m */; };
+		1F8A66BE1B62291500F3380A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A66BD1B62291500F3380A /* ViewController.m */; };
+		1F8A66C11B62291500F3380A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F8A66BF1B62291500F3380A /* Main.storyboard */; };
+		1F8A66C31B62291500F3380A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F8A66C21B62291500F3380A /* Images.xcassets */; };
+		1F8A66C61B62291500F3380A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F8A66C41B62291500F3380A /* LaunchScreen.xib */; };
+		1F8A66D21B62291500F3380A /* TDLoaderView_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A66D11B62291500F3380A /* TDLoaderView_iOSTests.m */; };
+		1F8A66DE1B622A2500F3380A /* TDLoaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A66DD1B622A2500F3380A /* TDLoaderView.m */; };
+		1F8A66E01B64E7A400F3380A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8A66DF1B64E7A400F3380A /* QuartzCore.framework */; };
+		1F8A66E21B64E7BA00F3380A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8A66E11B64E7BA00F3380A /* UIKit.framework */; };
+		1F8A66E41B64E7C300F3380A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8A66E31B64E7C300F3380A /* Foundation.framework */; };
+		1F8A66E81B64E80E00F3380A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8A66E51B64E7D200F3380A /* CoreGraphics.framework */; };
+		1F8A66EB1B6516A200F3380A /* TDLoaderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A66EA1B6516A200F3380A /* TDLoaderController.m */; };
+		1F8A66EE1B65C27700F3380A /* TDLoaderBackgroundWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A66ED1B65C27700F3380A /* TDLoaderBackgroundWindow.m */; };
+		1F8A66F11B65C4E300F3380A /* TDLoaderButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A66F01B65C4E300F3380A /* TDLoaderButtonItem.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1F8A66CC1B62291500F3380A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1F8A66AA1B62291500F3380A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1F8A66B11B62291500F3380A;
+			remoteInfo = TDLoaderView.iOS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1F8A66B21B62291500F3380A /* TDLoaderView.iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TDLoaderView.iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F8A66B61B62291500F3380A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F8A66B71B62291500F3380A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1F8A66B91B62291500F3380A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1F8A66BA1B62291500F3380A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1F8A66BC1B62291500F3380A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		1F8A66BD1B62291500F3380A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		1F8A66C01B62291500F3380A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1F8A66C21B62291500F3380A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		1F8A66C51B62291500F3380A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		1F8A66CB1B62291500F3380A /* TDLoaderView.iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TDLoaderView.iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F8A66D01B62291500F3380A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F8A66D11B62291500F3380A /* TDLoaderView_iOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDLoaderView_iOSTests.m; sourceTree = "<group>"; };
+		1F8A66DC1B622A2500F3380A /* TDLoaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDLoaderView.h; sourceTree = "<group>"; };
+		1F8A66DD1B622A2500F3380A /* TDLoaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDLoaderView.m; sourceTree = "<group>"; };
+		1F8A66DF1B64E7A400F3380A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		1F8A66E11B64E7BA00F3380A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1F8A66E31B64E7C300F3380A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1F8A66E51B64E7D200F3380A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1F8A66E91B6516A200F3380A /* TDLoaderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDLoaderController.h; sourceTree = "<group>"; };
+		1F8A66EA1B6516A200F3380A /* TDLoaderController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDLoaderController.m; sourceTree = "<group>"; };
+		1F8A66EC1B65C27700F3380A /* TDLoaderBackgroundWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDLoaderBackgroundWindow.h; sourceTree = "<group>"; };
+		1F8A66ED1B65C27700F3380A /* TDLoaderBackgroundWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDLoaderBackgroundWindow.m; sourceTree = "<group>"; };
+		1F8A66EF1B65C4E300F3380A /* TDLoaderButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDLoaderButtonItem.h; sourceTree = "<group>"; };
+		1F8A66F01B65C4E300F3380A /* TDLoaderButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDLoaderButtonItem.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1F8A66AF1B62291500F3380A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F8A66E01B64E7A400F3380A /* QuartzCore.framework in Frameworks */,
+				1F8A66E21B64E7BA00F3380A /* UIKit.framework in Frameworks */,
+				1F8A66E41B64E7C300F3380A /* Foundation.framework in Frameworks */,
+				1F8A66E81B64E80E00F3380A /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F8A66C81B62291500F3380A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1F8A66A91B62291500F3380A = {
+			isa = PBXGroup;
+			children = (
+				1F8A66B41B62291500F3380A /* TDLoaderView.iOS */,
+				1F8A66CE1B62291500F3380A /* TDLoaderView.iOSTests */,
+				1F8A66E71B64E7D700F3380A /* Frameworks */,
+				1F8A66B31B62291500F3380A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1F8A66B31B62291500F3380A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1F8A66B21B62291500F3380A /* TDLoaderView.iOS.app */,
+				1F8A66CB1B62291500F3380A /* TDLoaderView.iOSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1F8A66B41B62291500F3380A /* TDLoaderView.iOS */ = {
+			isa = PBXGroup;
+			children = (
+				1F8A66DB1B6229D500F3380A /* TDLoaderView */,
+				1F8A66B91B62291500F3380A /* AppDelegate.h */,
+				1F8A66BA1B62291500F3380A /* AppDelegate.m */,
+				1F8A66BC1B62291500F3380A /* ViewController.h */,
+				1F8A66BD1B62291500F3380A /* ViewController.m */,
+				1F8A66BF1B62291500F3380A /* Main.storyboard */,
+				1F8A66C21B62291500F3380A /* Images.xcassets */,
+				1F8A66C41B62291500F3380A /* LaunchScreen.xib */,
+				1F8A66B51B62291500F3380A /* Supporting Files */,
+			);
+			path = TDLoaderView.iOS;
+			sourceTree = "<group>";
+		};
+		1F8A66B51B62291500F3380A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1F8A66B61B62291500F3380A /* Info.plist */,
+				1F8A66B71B62291500F3380A /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1F8A66CE1B62291500F3380A /* TDLoaderView.iOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				1F8A66D11B62291500F3380A /* TDLoaderView_iOSTests.m */,
+				1F8A66CF1B62291500F3380A /* Supporting Files */,
+			);
+			path = TDLoaderView.iOSTests;
+			sourceTree = "<group>";
+		};
+		1F8A66CF1B62291500F3380A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1F8A66D01B62291500F3380A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1F8A66DB1B6229D500F3380A /* TDLoaderView */ = {
+			isa = PBXGroup;
+			children = (
+				1F8A66DC1B622A2500F3380A /* TDLoaderView.h */,
+				1F8A66DD1B622A2500F3380A /* TDLoaderView.m */,
+				1F8A66E91B6516A200F3380A /* TDLoaderController.h */,
+				1F8A66EA1B6516A200F3380A /* TDLoaderController.m */,
+				1F8A66EC1B65C27700F3380A /* TDLoaderBackgroundWindow.h */,
+				1F8A66ED1B65C27700F3380A /* TDLoaderBackgroundWindow.m */,
+				1F8A66EF1B65C4E300F3380A /* TDLoaderButtonItem.h */,
+				1F8A66F01B65C4E300F3380A /* TDLoaderButtonItem.m */,
+			);
+			path = TDLoaderView;
+			sourceTree = "<group>";
+		};
+		1F8A66E71B64E7D700F3380A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1F8A66E51B64E7D200F3380A /* CoreGraphics.framework */,
+				1F8A66E31B64E7C300F3380A /* Foundation.framework */,
+				1F8A66E11B64E7BA00F3380A /* UIKit.framework */,
+				1F8A66DF1B64E7A400F3380A /* QuartzCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1F8A66B11B62291500F3380A /* TDLoaderView.iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F8A66D51B62291500F3380A /* Build configuration list for PBXNativeTarget "TDLoaderView.iOS" */;
+			buildPhases = (
+				1F8A66AE1B62291500F3380A /* Sources */,
+				1F8A66AF1B62291500F3380A /* Frameworks */,
+				1F8A66B01B62291500F3380A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TDLoaderView.iOS;
+			productName = TDLoaderView.iOS;
+			productReference = 1F8A66B21B62291500F3380A /* TDLoaderView.iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1F8A66CA1B62291500F3380A /* TDLoaderView.iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F8A66D81B62291500F3380A /* Build configuration list for PBXNativeTarget "TDLoaderView.iOSTests" */;
+			buildPhases = (
+				1F8A66C71B62291500F3380A /* Sources */,
+				1F8A66C81B62291500F3380A /* Frameworks */,
+				1F8A66C91B62291500F3380A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1F8A66CD1B62291500F3380A /* PBXTargetDependency */,
+			);
+			name = TDLoaderView.iOSTests;
+			productName = TDLoaderView.iOSTests;
+			productReference = 1F8A66CB1B62291500F3380A /* TDLoaderView.iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1F8A66AA1B62291500F3380A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = tindle;
+				TargetAttributes = {
+					1F8A66B11B62291500F3380A = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					1F8A66CA1B62291500F3380A = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 1F8A66B11B62291500F3380A;
+					};
+				};
+			};
+			buildConfigurationList = 1F8A66AD1B62291500F3380A /* Build configuration list for PBXProject "TDLoaderView.iOS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1F8A66A91B62291500F3380A;
+			productRefGroup = 1F8A66B31B62291500F3380A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1F8A66B11B62291500F3380A /* TDLoaderView.iOS */,
+				1F8A66CA1B62291500F3380A /* TDLoaderView.iOSTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1F8A66B01B62291500F3380A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F8A66C11B62291500F3380A /* Main.storyboard in Resources */,
+				1F8A66C61B62291500F3380A /* LaunchScreen.xib in Resources */,
+				1F8A66C31B62291500F3380A /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F8A66C91B62291500F3380A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1F8A66AE1B62291500F3380A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F8A66BE1B62291500F3380A /* ViewController.m in Sources */,
+				1F8A66BB1B62291500F3380A /* AppDelegate.m in Sources */,
+				1F8A66EB1B6516A200F3380A /* TDLoaderController.m in Sources */,
+				1F8A66B81B62291500F3380A /* main.m in Sources */,
+				1F8A66EE1B65C27700F3380A /* TDLoaderBackgroundWindow.m in Sources */,
+				1F8A66F11B65C4E300F3380A /* TDLoaderButtonItem.m in Sources */,
+				1F8A66DE1B622A2500F3380A /* TDLoaderView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F8A66C71B62291500F3380A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F8A66D21B62291500F3380A /* TDLoaderView_iOSTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1F8A66CD1B62291500F3380A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1F8A66B11B62291500F3380A /* TDLoaderView.iOS */;
+			targetProxy = 1F8A66CC1B62291500F3380A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1F8A66BF1B62291500F3380A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1F8A66C01B62291500F3380A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1F8A66C41B62291500F3380A /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1F8A66C51B62291500F3380A /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1F8A66D31B62291500F3380A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1F8A66D41B62291500F3380A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1F8A66D61B62291500F3380A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TDLoaderView.iOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1F8A66D71B62291500F3380A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TDLoaderView.iOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		1F8A66D91B62291500F3380A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TDLoaderView.iOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TDLoaderView.iOS.app/TDLoaderView.iOS";
+			};
+			name = Debug;
+		};
+		1F8A66DA1B62291500F3380A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TDLoaderView.iOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TDLoaderView.iOS.app/TDLoaderView.iOS";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1F8A66AD1B62291500F3380A /* Build configuration list for PBXProject "TDLoaderView.iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F8A66D31B62291500F3380A /* Debug */,
+				1F8A66D41B62291500F3380A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1F8A66D51B62291500F3380A /* Build configuration list for PBXNativeTarget "TDLoaderView.iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F8A66D61B62291500F3380A /* Debug */,
+				1F8A66D71B62291500F3380A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1F8A66D81B62291500F3380A /* Build configuration list for PBXNativeTarget "TDLoaderView.iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F8A66D91B62291500F3380A /* Debug */,
+				1F8A66DA1B62291500F3380A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1F8A66AA1B62291500F3380A /* Project object */;
+}
