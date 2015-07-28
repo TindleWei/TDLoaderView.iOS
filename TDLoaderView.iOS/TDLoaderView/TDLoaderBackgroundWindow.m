@@ -11,14 +11,14 @@
 
 @implementation TDLoaderBackgroundWindow
 
-- (id)initWithFrame:(CGRect)frame andStyle:(TDLoaderViewType)type
+- (id)initWithFrame:(CGRect)frame andStyle:(TDAlertViewType)type
 {
     self = [super initWithFrame:frame];
     if (self) {
         self.type = type;
         self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         self.opaque = NO;
-        self.windowLevel = UIWindowLevelTDLoaderBackground;
+        self.windowLevel = UIWindowLevelTDAlertBackground;
     }
     return self;
 }

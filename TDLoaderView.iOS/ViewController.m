@@ -7,63 +7,70 @@
 //
 
 #import "ViewController.h"
-#import "TDLoaderView.h"
+#import "TDAlertView.h"
 #import "TDProgressHUD.h"
+#import "TDLoaderView.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *btn;
+
+@property (strong, nonatomic) UIView *myView;
+
+@property (strong, nonatomic) TDLoaderView *loaderView;
 
 @end
 
 @implementation ViewController
 
+- (IBAction)action:(id)sender {
+    
+    //_loaderView = [[TDLoaderView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
+    
+    _loaderView = [[TDLoaderView alloc]initProgressWithStatus:@"Loading"];
+//    [self.view addSubview:_loaderView];
+    [_loaderView show];
+ 
+}
+
+- (void)startAnimation {
+    NSLog(@"startAnimation self");
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor redColor];
+    self.view.backgroundColor = [UIColor blackColor];
     
-//    [self alert2];
+//    CGRect viewRect = CGRectMake(50,100,200,200);
+//    
+//    self.myView= [[UIView alloc] initWithFrame:viewRect];
+//    self.myView.backgroundColor = [UIColor whiteColor];
+//    
+//    [self.view addSubview:self.myView];
     
     
     
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-    [TDProgressHUD show];
-    
-    [TDProgressHUD showWithStatus:@"Doing Stuff"];
+    //[TDProgressHUD show];
+    //[TDProgressHUD showWithStatus:@"Doing Stuff"];
 }
 
 - (void)alert2
 {
-    TDLoaderView *alertView = [[TDLoaderView alloc] initWithTitle:@"Title2" andMessage:@"Message2"];
+    TDAlertView *alertView = [[TDAlertView alloc] initWithTitle:@"Title2" andMessage:@"Message2"];
     [alertView addButtonWithTitle:@"Cancel"
                              type:0
-                          handler:^(TDLoaderView *alertView) {
+                          handler:^(TDAlertView *alertView) {
                               NSLog(@"Cancel Clicked");
                           }];
     [alertView addButtonWithTitle:@"OK"
                              type:0
-                          handler:^(TDLoaderView *alertView) {
+                          handler:^(TDAlertView *alertView) {
                               NSLog(@"OK Clicked");
                               
                           }];
-//    alertView.titleColor = [UIColor blueColor];
-//    alertView.cornerRadius = 10;
-//    alertView.buttonFont = [UIFont boldSystemFontOfSize:15];
-//    alertView.transitionStyle = SIAlertViewTransitionStyleBounce;
-    
-//    alertView.willShowHandler = ^(SIAlertView *alertView) {
-//        NSLog(@"%@, willShowHandler2", alertView);
-//    };
-//    alertView.didShowHandler = ^(SIAlertView *alertView) {
-//        NSLog(@"%@, didShowHandler2", alertView);
-//    };
-//    alertView.willDismissHandler = ^(SIAlertView *alertView) {
-//        NSLog(@"%@, willDismissHandler2", alertView);
-//    };
-//    alertView.didDismissHandler = ^(SIAlertView *alertView) {
-//        NSLog(@"%@, didDismissHandler2", alertView);
-//    };
     
     [alertView show];
     

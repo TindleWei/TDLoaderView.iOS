@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TDLoaderView.h"
+#import "TDAlertView.h"
 
 @interface TDLoaderBackgroundWindow : UIWindow
 
-@property (nonatomic, assign) TDLoaderViewType type;
+@property (nonatomic, assign) TDAlertViewType type;
 
-- (id)initWithFrame:(CGRect)frame andStyle:(TDLoaderViewType)type;
+- (id)initWithFrame:(CGRect)frame andStyle:(TDAlertViewType)type;
 
 @end

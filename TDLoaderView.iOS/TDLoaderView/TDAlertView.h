@@ -11,10 +11,10 @@
 extern NSString *const TDLoaderViewWillShowNotification;
 extern NSString *const TDLoaderViewWillDismissNofification;
 
-extern UIWindowLevel const UIWindowLevelTDLoader;  // don't overlap system's alert
-extern UIWindowLevel const UIWindowLevelTDLoaderBackground; // below the alert window
+extern UIWindowLevel const UIWindowLevelTDAlert;  // don't overlap system's alert
+extern UIWindowLevel const UIWindowLevelTDAlertBackground; // below the alert window
 
-typedef NS_ENUM(NSInteger, TDLoaderViewType){
+typedef NS_ENUM(NSInteger, TDAlertViewType){
     TDLoaderViewTypeHUD         = 0,
     TDLoaderViewTypeLoading     = 1,
     TDLoaderViewTypeChoosen     = 2,
@@ -36,11 +36,11 @@ typedef NS_ENUM(NSInteger, TDLoaderViewLoaderType){
     TDLoaderViewStyleDownloading    = 2
 };
 
-@class TDLoaderView;
+@class TDAlertView;
 
-typedef void (^TDLoaderViewHandler)(TDLoaderView *loaderView);
+typedef void (^TDLoaderViewHandler)(TDAlertView *loaderView);
 
-@interface TDLoaderView : UIView
+@interface TDAlertView : UIView
 
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *message;

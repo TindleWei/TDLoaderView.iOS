@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TDLoaderView.h"
+#import "TDAlertView.h"
 
 @interface TDLoaderController : UIViewController
 
-@property (nonatomic, strong) TDLoaderView *loaderView;
+@property (nonatomic, strong) TDAlertView *loaderView;
 
 @end

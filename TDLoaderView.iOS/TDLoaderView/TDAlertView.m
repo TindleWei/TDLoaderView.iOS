@@ -6,10 +6,10 @@
 //  Copyright (c) 2015年 tindle. All rights reserved.
 //
 
-#import "TDLoaderView.h"
+#import "TDAlertView.h"
 #import "TDLoaderController.h"
 #import "TDLoaderBackgroundWindow.h"
-#import "TDLoaderButtonItem.h"
+#import "TDAlertButtonItem.h"
 
 #define debugMethod() NSLog(@"%s", __func__)
 
@@ -28,13 +28,13 @@ NSString *const TDLoaderViewWillDismissNofification = @"TDLoaderViewWillDismissN
 #define BUTTON_HEIGHT 44
 #define CONTAINER_WIDTH 300
 
-const UIWindowLevel UIWindowLevelTDLoader = 1996.0;  // don't overlap system's alert
-const UIWindowLevel UIWindowLevelTDLoaderBackground = 1985.0; // below the alert window
+const UIWindowLevel UIWindowLevelTDAlert = 1996.0;  // don't overlap system's alert
+const UIWindowLevel UIWindowLevelTDAlertBackground = 1985.0; // below the alert window
 
 static TDLoaderBackgroundWindow *_background_window;
-static TDLoaderView *_current_view;
+static TDAlertView *_current_view;
 
-@interface TDLoaderView ()
+@interface TDAlertView ()
 
 @property (nonatomic, strong) NSMutableArray *items;
 @property (nonatomic, strong) NSMutableArray *buttons;
@@ -48,7 +48,7 @@ static TDLoaderView *_current_view;
 @property (nonatomic, assign, getter = isLayoutDirty) BOOL layoutDirty;
 
 
-+ (TDLoaderView *)currentLoaderView;
++ (TDAlertView *)currentLoaderView;
 
 + (BOOL)isAnimating;
 + (void)setAnimating:(BOOL)animating;
@@ -65,7 +65,7 @@ static TDLoaderView *_current_view;
 
 #pragma mark - TDLoaderView
 
-@implementation TDLoaderView
+@implementation TDAlertView
 
 - (id)initWithTitle:(NSString *)title andMessage:(NSString *)message
 {
@@ -107,7 +107,7 @@ static TDLoaderView *_current_view;
 
 - (void)addButtonWithTitle:(NSString *)title type:(TDLoaderViewTextType)type handler:(TDLoaderViewHandler)handler
 {
-    TDLoaderButtonItem *item = [[TDLoaderButtonItem alloc] init];
+    TDAlertButtonItem *item = [[TDAlertButtonItem alloc] init];
     item.title = title;
     item.type = type;
     item.action = handler;
@@ -125,7 +125,7 @@ static TDLoaderView *_current_view;
     }
     [[NSNotificationCenter defaultCenter] postNotificationName:TDLoaderViewWillShowNotification object:self userInfo:nil];
     
-    [TDLoaderView showBackground];
+    [TDAlertView showBackground];
     
     //Make Root Controller here
     TDLoaderController *viewController = [[TDLoaderController alloc] initWithNibName:nil bundle:nil];
@@ -135,7 +135,7 @@ static TDLoaderView *_current_view;
         UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
         window.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         window.opaque = NO;
-        window.windowLevel = UIWindowLevelTDLoader;
+        window.windowLevel = UIWindowLevelTDAlert;
         window.rootViewController = viewController;
         self.loaderWindow = window;
     }
@@ -411,7 +411,7 @@ static TDLoaderView *_current_view;
 }
 
 - (UIButton *)buttonForItemIndex:(NSUInteger)index {
-    TDLoaderButtonItem *item = self.items[index];
+    TDAlertButtonItem *item = self.items[index];
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.tag = index;
     button.autoresizingMask = UIViewAutoresizingFlexibleWidth;
@@ -436,8 +436,8 @@ static TDLoaderView *_current_view;
 
 - (void)buttonAction:(UIButton *)button
 {
-    [TDLoaderView setAnimating:YES]; // set this flag to YES in order to prevent showing another alert in action block
-    TDLoaderButtonItem *item = self.items[button.tag];
+    [TDAlertView setAnimating:YES]; // set this flag to YES in order to prevent showing another alert in action block
+    TDAlertButtonItem *item = self.items[button.tag];
     if (item.action) {
         item.action(self);
     }
