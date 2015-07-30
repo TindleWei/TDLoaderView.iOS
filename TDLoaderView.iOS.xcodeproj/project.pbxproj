@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F15EBDC1B6A176B006CF49A /* LayoutUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F15EBDB1B6A176B006CF49A /* LayoutUtil.m */; };
 		1F8A66B81B62291500F3380A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A66B71B62291500F3380A /* main.m */; };
 		1F8A66BB1B62291500F3380A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A66BA1B62291500F3380A /* AppDelegate.m */; };
 		1F8A66BE1B62291500F3380A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A66BD1B62291500F3380A /* ViewController.m */; };
@@ -39,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F15EBDA1B6A176B006CF49A /* LayoutUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayoutUtil.h; sourceTree = "<group>"; };
+		1F15EBDB1B6A176B006CF49A /* LayoutUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayoutUtil.m; sourceTree = "<group>"; };
 		1F8A66B21B62291500F3380A /* TDLoaderView.iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TDLoaderView.iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F8A66B61B62291500F3380A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F8A66B71B62291500F3380A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -171,6 +174,8 @@
 				1F8DE4001B675AA300593688 /* TDAlertButtonItem.m */,
 				1F8DE4021B675B4400593688 /* TDLoaderView.h */,
 				1F8DE4031B675B4400593688 /* TDLoaderView.m */,
+				1F15EBDA1B6A176B006CF49A /* LayoutUtil.h */,
+				1F15EBDB1B6A176B006CF49A /* LayoutUtil.m */,
 			);
 			path = TDLoaderView;
 			sourceTree = "<group>";
@@ -307,6 +312,7 @@
 				1F8A66B81B62291500F3380A /* main.m in Sources */,
 				1F8A66EE1B65C27700F3380A /* TDLoaderBackgroundWindow.m in Sources */,
 				1F8DE4011B675AA300593688 /* TDAlertButtonItem.m in Sources */,
+				1F15EBDC1B6A176B006CF49A /* LayoutUtil.m in Sources */,
 				1F8A66DE1B622A2500F3380A /* TDAlertView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

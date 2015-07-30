@@ -27,6 +27,8 @@ typedef NS_ENUM(NSInteger, TDLoaderBootsType){
 
 @interface TDLoaderView : UIView
 
+@property (nonatomic, assign, getter = isVisible) BOOL visible;
+
 - (id)initProgressWithStatus:(NSString *)status;
 - (id)initLoaderWithStatus:(NSString *)status;
 - (id)initAlertWithStatus:(NSString *)status;
@@ -36,5 +38,8 @@ typedef NS_ENUM(NSInteger, TDLoaderBootsType){
 - (void)changeViewType:(TDLoaderViewType)type;
 - (void)setBootsType:(TDLoaderBootsType)type;
 - (void)dismissAnimated:(BOOL)animated;
+
+- (void)setProgressStatus:(NSString *)status;
+
 
 @end

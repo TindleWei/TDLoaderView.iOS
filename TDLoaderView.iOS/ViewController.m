@@ -18,18 +18,37 @@
 
 @property (strong, nonatomic) TDLoaderView *loaderView;
 
+@property (nonatomic, assign) NSInteger num;
+
 @end
 
 @implementation ViewController
 
 - (IBAction)action:(id)sender {
     
-    //_loaderView = [[TDLoaderView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
+    if (_num%3==0) {
+        _num++;
+        if (!_loaderView) {
+            _loaderView = [[TDLoaderView alloc] initWithFrame:CGRectZero];
+            //_loaderView = [[TDLoaderView alloc]initProgressWithStatus:@"Loading"];
+            [self.view addSubview:_loaderView];
+        }
+        
+        [_loaderView setProgressStatus:@"正在加载中"];
+        [_loaderView show];
+        
+    }else if(_num%3==1){
+        [_loaderView changeViewType:TDLoaderViewTypeAlert];
+        _num++;
+        return;
+    }else{
+        [_loaderView removeFromSuperview];
+        _loaderView = nil;
+        _num++;
+        return;
+    }
     
-    _loaderView = [[TDLoaderView alloc]initProgressWithStatus:@"Loading"];
-//    [self.view addSubview:_loaderView];
-    [_loaderView show];
- 
+    
 }
 
 - (void)startAnimation {
@@ -40,6 +59,8 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor blackColor];
+    
+    _num = 0;
     
 //    CGRect viewRect = CGRectMake(50,100,200,200);
 //    

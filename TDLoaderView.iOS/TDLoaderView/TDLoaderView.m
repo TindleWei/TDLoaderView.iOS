@@ -26,6 +26,18 @@ const UIWindowLevel UIWindowLevelTDLoaderBackground = 1985.0; // below the alert
 @property (nonatomic, strong) UILabel *statusLabel;
 @property (nonatomic, strong) TDProgressView *progressView;
 
+@property (nonatomic, readwrite) TDLoaderViewType currentViewType;
+
+//alert view
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *message;
+
+@property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UILabel *messageLabel;
+@property (nonatomic, strong) NSMutableArray *buttons;
+
+
+
 @end
 
 @implementation TDLoaderView
@@ -34,14 +46,152 @@ const UIWindowLevel UIWindowLevelTDLoaderBackground = 1985.0; // below the alert
     debugMethod();
     self = [super init];
     if (self) {
-        _status = status;
+        self.status = status;
+        self.currentViewType = TDLoaderViewTypeProgress;
     }
     return self;
 }
 
+- (void)setProgressStatus:(NSString *)status{
+    self.status = status;
+}
+
+- (void)changeViewType:(TDLoaderViewType)type{
+    if (type == _currentViewType) {
+        return;
+    }
+    _currentViewType = type;
+//     [self teardown];
+    
+    
+    if(type==TDLoaderViewTypeProgress){
+        
+        
+        
+    }else if(type==TDLoaderViewTypeLoader){
+        
+    }else if(type==TDLoaderViewTypeAlert){
+        [UIView animateWithDuration:0.3 animations:^{
+            self.statusLabel.alpha = 0;
+            self.progressView.alpha = 0;
+            
+        } completion:^(BOOL finished) {
+            self.statusLabel = nil;
+            self.progressView = nil;
+            
+            [UIView animateWithDuration:0.3 animations:^{
+                [self addAlertView];
+            }];
+        }];
+    }else if(type==TDLoaderViewTypeToast){
+        
+    }
+    
+    
+    
+}
+
+- (void) addAlertView{
+    
+    if (!self.titleLabel) {
+        self.titleLabel = [[UILabel alloc] initWithFrame:self.bounds];
+        self.titleLabel.textAlignment = NSTextAlignmentCenter;
+        self.titleLabel.backgroundColor = [UIColor clearColor];
+        self.titleLabel.adjustsFontSizeToFitWidth = YES;
+        self.titleLabel.minimumFontSize = self.titleLabel.font.pointSize * 0.75;
+        [self.hudView addSubview:self.titleLabel];
+        
+        self.titleLabel.text = @"Hi, Title";
+    }
+    
+    if (!self.messageLabel) {
+        self.messageLabel = [[UILabel alloc] initWithFrame:self.bounds];
+        self.messageLabel.textAlignment = NSTextAlignmentCenter;
+        self.messageLabel.backgroundColor = [UIColor clearColor];
+        self.messageLabel.numberOfLines = 3;
+        [self.hudView addSubview:self.messageLabel];
+        
+        self.messageLabel.text = @"Is there any questions?";
+    }
+    
+    CGFloat screenWidth = [UIScreen mainScreen].applicationFrame.size.width;
+    CGFloat screenHeight = [UIScreen mainScreen].applicationFrame.size.height -[UIApplication sharedApplication].statusBarFrame.size.height;
+    
+    CGFloat height = [self preferredHeight];
+    CGFloat left = (screenWidth - 300) * 0.5;
+    CGFloat top = (screenHeight - height) * 0.5;
+    
+    self.hudView.transform = CGAffineTransformIdentity;
+    self.hudView.frame = CGRectMake(left, top, 300, height);
+    
+    CGFloat y = 10;
+    if (self.titleLabel) {
+        self.titleLabel.frame = CGRectMake(10, y, self.hudView.bounds.size.width - 10 * 2, 40);
+        y = CGRectGetMaxY(self.titleLabel.frame);
+    }
+    if (self.messageLabel) {
+        y += 10;
+        self.messageLabel.frame = CGRectMake(10, y, self.hudView.bounds.size.width - 10 * 2, 40);
+    }
+    
+    [self setupButtons];
+}
+
+-(void)setupButtons{
+    self.buttons = [[NSMutableArray alloc] initWithCapacity:2];
+    
+}
+
+- (CGFloat)preferredHeight {
+    
+    CGFloat height = 10;
+    if(self.titleLabel){
+        height +=40;
+    }
+    if(self.messageLabel){
+        if(height>10){
+            height +=10;
+        }
+        height += 40;
+        //add calculate height
+        
+    }
+    return height+200;
+}
+
+- (void)dismissAnimated:(BOOL)animated{
+    BOOL isVisible = self.isVisible;
+    
+    if (isVisible) {
+        
+    }
+   
+    
+    void (^dismissComplete)(void) = ^{
+        self.visible = NO;
+        
+        [self teardown];
+        
+        
+        
+    
+    };
+    
+    
+}
+
+- (void)teardown {
+    [self.containerView removeFromSuperview];
+    [self.hudView removeFromSuperview];
+}
 
 -(void)show{
+    
     debugMethod();
+    if (self.isVisible) {
+        return;
+    }
+    self.visible = YES;
     
     if(!self.containerView.superview){
         UIWindow *window = [[UIApplication sharedApplication] keyWindow];
@@ -60,6 +210,7 @@ const UIWindowLevel UIWindowLevelTDLoaderBackground = 1985.0; // below the alert
     self.hudView.isAccessibilityElement = YES;
 
     [self validateLayout];
+    
 }
 
 - (void)validateLayout {
@@ -73,15 +224,32 @@ const UIWindowLevel UIWindowLevelTDLoaderBackground = 1985.0; // below the alert
     self.hudView.frame = CGRectMake(hubX, hubY, HUB_VIEW_SIZE, HUB_VIEW_SIZE);
     
     CGFloat offsetX = (HUB_VIEW_SIZE - PROGRESS_VIEW_SIZE)/2;
+    CGFloat offsetY = (HUB_VIEW_SIZE - PROGRESS_VIEW_SIZE)/2;
     
-    self.progressView.frame = CGRectMake(offsetX+5, offsetX-5, PROGRESS_VIEW_SIZE, PROGRESS_VIEW_SIZE);
+    if (_status) {
+        offsetY -= 5;
+        self.statusLabel.text = _status;
+    }else{
+        offsetY += 5;
+    }
     
+    self.progressView.frame = CGRectMake(offsetX+5, offsetY, PROGRESS_VIEW_SIZE, PROGRESS_VIEW_SIZE);
+    [self setRectForLabel:self.statusLabel];
+    
+    [self.hudView setNeedsDisplay];
+}
+
+-(void)setRectForLabel:(UILabel *)lable{
+    
+    if (!lable) {
+        return;
+    }
     
     CGFloat stringWidth = 0.0f;
     CGFloat stringHeight = 0.0f;
     CGRect labelRect = CGRectZero;
     
-    NSString *string = self.statusLabel.text;
+    NSString *string = lable.text;
     
     if(string) {
         CGSize constraintSize = CGSizeMake(200.0f, 300.0f);
@@ -89,28 +257,24 @@ const UIWindowLevel UIWindowLevelTDLoaderBackground = 1985.0; // below the alert
         if ([string respondsToSelector:@selector(boundingRectWithSize:options:attributes:context:)]){
             stringRect = [string boundingRectWithSize:constraintSize
                                               options:(NSStringDrawingOptions)(NSStringDrawingUsesFontLeading|NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesLineFragmentOrigin)
-                                           attributes:@{NSFontAttributeName: self.statusLabel.font}
+                                           attributes:@{NSFontAttributeName: lable.font}
                                               context:NULL];
         } else {
             CGSize stringSize;
             if ([string respondsToSelector:@selector(sizeWithAttributes:)]){
-                stringSize = [string sizeWithAttributes:@{NSFontAttributeName:[UIFont fontWithName:self.statusLabel.font.fontName size:self.statusLabel.font.pointSize]}];
-            } else {
-                stringSize = [string sizeWithFont:self.statusLabel.font constrainedToSize:CGSizeMake(200.0f, 300.0f)];
+                stringSize = [string sizeWithAttributes:@{NSFontAttributeName:[UIFont fontWithName:lable.font.fontName size:lable.font.pointSize]}];
             }
             stringRect = CGRectMake(0.0f, 0.0f, stringSize.width, stringSize.height);
         }
         stringWidth = stringRect.size.width;
         stringHeight = ceil(CGRectGetHeight(stringRect));
         
-        CGFloat labelRectY = 9.0f;
-        labelRect = CGRectMake(0.0f, labelRectY, 100, stringHeight);
+        CGFloat labelRectY = CGRectGetMaxY(self.progressView.frame);
+        labelRect = CGRectMake(0.0f, labelRectY, HUB_VIEW_SIZE, stringHeight);
         
         
-        self.statusLabel.frame = labelRect;
-        
-        
-        [self.hudView setNeedsDisplay];
+        lable.frame = labelRect;
+    }else{
         
     }
 }
@@ -163,8 +327,8 @@ const UIWindowLevel UIWindowLevelTDLoaderBackground = 1985.0; // below the alert
         _statusLabel.textAlignment = NSTextAlignmentCenter;
         _statusLabel.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
         _statusLabel.numberOfLines = 1;
-//        _statusLabel.adjustsFontSizeToFitWidth      = NO;
-        _statusLabel.text = @"Saving";
+        _statusLabel.adjustsFontSizeToFitWidth      = NO;
+//        _statusLabel.text = @"Saving";
         _statusLabel.font = [UIFont fontWithName:@"Helvetica" size:14];
     }
     
