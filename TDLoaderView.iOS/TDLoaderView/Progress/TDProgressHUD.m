@@ -48,7 +48,7 @@ static const CGFloat SVProgressHUDParallaxDepthPoints = 10;
 @property (nonatomic, strong) UIView *hudView;
 @property (nonatomic, strong) UILabel *stringLabel;
 @property (nonatomic, strong) UIImageView *imageView;
-@property (nonatomic, strong) TDProgressView *indefiniteAnimatedView;
+@property (nonatomic, strong) TDProgressCircleView *indefiniteAnimatedView;
 
 @property (nonatomic, readwrite) CGFloat progress;
 @property (nonatomic, readwrite) NSUInteger activityCount;
@@ -640,9 +640,9 @@ static const CGFloat SVProgressHUDParallaxDepthPoints = 10;
 
 #pragma mark - Ring progress animation
 
-- (TDProgressView *)indefiniteAnimatedView {
+- (TDProgressCircleView *)indefiniteAnimatedView {
     if (_indefiniteAnimatedView == nil) {
-        _indefiniteAnimatedView = [[TDProgressView alloc] initWithFrame:CGRectZero];
+        _indefiniteAnimatedView = [[TDProgressCircleView alloc] initWithFrame:CGRectZero];
         _indefiniteAnimatedView.strokeThickness = SVProgressHUDRingThickness;
         _indefiniteAnimatedView.strokeColor = SVProgressHUDForegroundColor;
         _indefiniteAnimatedView.radius = self.stringLabel.text ? SVProgressHUDRingRadius : SVProgressHUDRingNoTextRadius;

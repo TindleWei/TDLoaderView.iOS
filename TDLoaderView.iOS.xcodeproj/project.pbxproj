@@ -15,18 +15,19 @@
 		1F8A66C31B62291500F3380A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F8A66C21B62291500F3380A /* Images.xcassets */; };
 		1F8A66C61B62291500F3380A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F8A66C41B62291500F3380A /* LaunchScreen.xib */; };
 		1F8A66D21B62291500F3380A /* TDLoaderView_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A66D11B62291500F3380A /* TDLoaderView_iOSTests.m */; };
-		1F8A66DE1B622A2500F3380A /* TDAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A66DD1B622A2500F3380A /* TDAlertView.m */; };
 		1F8A66E01B64E7A400F3380A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8A66DF1B64E7A400F3380A /* QuartzCore.framework */; };
 		1F8A66E21B64E7BA00F3380A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8A66E11B64E7BA00F3380A /* UIKit.framework */; };
 		1F8A66E41B64E7C300F3380A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8A66E31B64E7C300F3380A /* Foundation.framework */; };
 		1F8A66E81B64E80E00F3380A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8A66E51B64E7D200F3380A /* CoreGraphics.framework */; };
-		1F8A66EB1B6516A200F3380A /* TDLoaderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A66EA1B6516A200F3380A /* TDLoaderController.m */; };
-		1F8A66EE1B65C27700F3380A /* TDLoaderBackgroundWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A66ED1B65C27700F3380A /* TDLoaderBackgroundWindow.m */; };
-		1F8A66F51B65C79E00F3380A /* TDProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A66F41B65C79E00F3380A /* TDProgressView.m */; };
+		1F8A66F51B65C79E00F3380A /* TDProgressCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A66F41B65C79E00F3380A /* TDProgressCircleView.m */; };
 		1F8A66F81B66238100F3380A /* TDProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A66F71B66238100F3380A /* TDProgressHUD.m */; };
 		1F8A66FA1B663B1300F3380A /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1F8A66F91B663B1300F3380A /* SVProgressHUD.bundle */; };
 		1F8DE4011B675AA300593688 /* TDAlertButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DE4001B675AA300593688 /* TDAlertButtonItem.m */; };
 		1F8DE4041B675B4400593688 /* TDLoaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DE4031B675B4400593688 /* TDLoaderView.m */; };
+		1FFF19F01B71EE8800A2504F /* ScreenUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FFF19EF1B71EE8800A2504F /* ScreenUtil.m */; };
+		1FFF19F21B726DAE00A2504F /* TDView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FFF19F11B726DAE00A2504F /* TDView.m */; };
+		1FFF19F81B72EAAB00A2504F /* TDProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FFF19F71B72EAAB00A2504F /* TDProgressView.m */; };
+		1FFF19FB1B72EACD00A2504F /* TDAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FFF19FA1B72EACD00A2504F /* TDAlertView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,18 +56,12 @@
 		1F8A66CB1B62291500F3380A /* TDLoaderView.iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TDLoaderView.iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F8A66D01B62291500F3380A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F8A66D11B62291500F3380A /* TDLoaderView_iOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TDLoaderView_iOSTests.m; sourceTree = "<group>"; };
-		1F8A66DC1B622A2500F3380A /* TDAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDAlertView.h; sourceTree = "<group>"; };
-		1F8A66DD1B622A2500F3380A /* TDAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDAlertView.m; sourceTree = "<group>"; };
 		1F8A66DF1B64E7A400F3380A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		1F8A66E11B64E7BA00F3380A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1F8A66E31B64E7C300F3380A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1F8A66E51B64E7D200F3380A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		1F8A66E91B6516A200F3380A /* TDLoaderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDLoaderController.h; sourceTree = "<group>"; };
-		1F8A66EA1B6516A200F3380A /* TDLoaderController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDLoaderController.m; sourceTree = "<group>"; };
-		1F8A66EC1B65C27700F3380A /* TDLoaderBackgroundWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDLoaderBackgroundWindow.h; sourceTree = "<group>"; };
-		1F8A66ED1B65C27700F3380A /* TDLoaderBackgroundWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDLoaderBackgroundWindow.m; sourceTree = "<group>"; };
-		1F8A66F31B65C79E00F3380A /* TDProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDProgressView.h; sourceTree = "<group>"; };
-		1F8A66F41B65C79E00F3380A /* TDProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDProgressView.m; sourceTree = "<group>"; };
+		1F8A66F31B65C79E00F3380A /* TDProgressCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDProgressCircleView.h; sourceTree = "<group>"; };
+		1F8A66F41B65C79E00F3380A /* TDProgressCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDProgressCircleView.m; sourceTree = "<group>"; };
 		1F8A66F61B66238100F3380A /* TDProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDProgressHUD.h; sourceTree = "<group>"; };
 		1F8A66F71B66238100F3380A /* TDProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDProgressHUD.m; sourceTree = "<group>"; };
 		1F8A66F91B663B1300F3380A /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
@@ -74,6 +69,14 @@
 		1F8DE4001B675AA300593688 /* TDAlertButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDAlertButtonItem.m; sourceTree = "<group>"; };
 		1F8DE4021B675B4400593688 /* TDLoaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDLoaderView.h; sourceTree = "<group>"; };
 		1F8DE4031B675B4400593688 /* TDLoaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDLoaderView.m; sourceTree = "<group>"; };
+		1FFF19E91B71CD2A00A2504F /* TDView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TDView.h; path = Factory/TDView.h; sourceTree = "<group>"; };
+		1FFF19EE1B71EE8800A2504F /* ScreenUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenUtil.h; sourceTree = "<group>"; };
+		1FFF19EF1B71EE8800A2504F /* ScreenUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScreenUtil.m; sourceTree = "<group>"; };
+		1FFF19F11B726DAE00A2504F /* TDView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TDView.m; path = Factory/TDView.m; sourceTree = "<group>"; };
+		1FFF19F61B72EAAB00A2504F /* TDProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TDProgressView.h; path = Factory/TDProgressView.h; sourceTree = "<group>"; };
+		1FFF19F71B72EAAB00A2504F /* TDProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TDProgressView.m; path = Factory/TDProgressView.m; sourceTree = "<group>"; };
+		1FFF19F91B72EACD00A2504F /* TDAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TDAlertView.h; path = Factory/TDAlertView.h; sourceTree = "<group>"; };
+		1FFF19FA1B72EACD00A2504F /* TDAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TDAlertView.m; path = Factory/TDAlertView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,16 +165,11 @@
 		1F8A66DB1B6229D500F3380A /* TDLoaderView */ = {
 			isa = PBXGroup;
 			children = (
+				1FFF19ED1B71EE6D00A2504F /* Util */,
+				1FFF19EC1B71D81200A2504F /* ModelView */,
+				1FFF19E81B71CCFD00A2504F /* Factory */,
 				1F8A66F91B663B1300F3380A /* SVProgressHUD.bundle */,
 				1F8A66F21B65C78300F3380A /* Progress */,
-				1F8A66DC1B622A2500F3380A /* TDAlertView.h */,
-				1F8A66DD1B622A2500F3380A /* TDAlertView.m */,
-				1F8A66E91B6516A200F3380A /* TDLoaderController.h */,
-				1F8A66EA1B6516A200F3380A /* TDLoaderController.m */,
-				1F8A66EC1B65C27700F3380A /* TDLoaderBackgroundWindow.h */,
-				1F8A66ED1B65C27700F3380A /* TDLoaderBackgroundWindow.m */,
-				1F8DE3FF1B675AA300593688 /* TDAlertButtonItem.h */,
-				1F8DE4001B675AA300593688 /* TDAlertButtonItem.m */,
 				1F8DE4021B675B4400593688 /* TDLoaderView.h */,
 				1F8DE4031B675B4400593688 /* TDLoaderView.m */,
 				1F15EBDA1B6A176B006CF49A /* LayoutUtil.h */,
@@ -194,12 +192,43 @@
 		1F8A66F21B65C78300F3380A /* Progress */ = {
 			isa = PBXGroup;
 			children = (
-				1F8A66F31B65C79E00F3380A /* TDProgressView.h */,
-				1F8A66F41B65C79E00F3380A /* TDProgressView.m */,
+				1F8A66F31B65C79E00F3380A /* TDProgressCircleView.h */,
+				1F8A66F41B65C79E00F3380A /* TDProgressCircleView.m */,
 				1F8A66F61B66238100F3380A /* TDProgressHUD.h */,
 				1F8A66F71B66238100F3380A /* TDProgressHUD.m */,
 			);
 			path = Progress;
+			sourceTree = "<group>";
+		};
+		1FFF19E81B71CCFD00A2504F /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				1FFF19E91B71CD2A00A2504F /* TDView.h */,
+				1FFF19F11B726DAE00A2504F /* TDView.m */,
+				1FFF19F91B72EACD00A2504F /* TDAlertView.h */,
+				1FFF19FA1B72EACD00A2504F /* TDAlertView.m */,
+				1FFF19F61B72EAAB00A2504F /* TDProgressView.h */,
+				1FFF19F71B72EAAB00A2504F /* TDProgressView.m */,
+			);
+			name = Factory;
+			sourceTree = "<group>";
+		};
+		1FFF19EC1B71D81200A2504F /* ModelView */ = {
+			isa = PBXGroup;
+			children = (
+				1F8DE3FF1B675AA300593688 /* TDAlertButtonItem.h */,
+				1F8DE4001B675AA300593688 /* TDAlertButtonItem.m */,
+			);
+			name = ModelView;
+			sourceTree = "<group>";
+		};
+		1FFF19ED1B71EE6D00A2504F /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				1FFF19EE1B71EE8800A2504F /* ScreenUtil.h */,
+				1FFF19EF1B71EE8800A2504F /* ScreenUtil.m */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,16 +333,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F8A66BE1B62291500F3380A /* ViewController.m in Sources */,
+				1FFF19F21B726DAE00A2504F /* TDView.m in Sources */,
 				1F8A66BB1B62291500F3380A /* AppDelegate.m in Sources */,
-				1F8A66EB1B6516A200F3380A /* TDLoaderController.m in Sources */,
 				1F8DE4041B675B4400593688 /* TDLoaderView.m in Sources */,
 				1F8A66F81B66238100F3380A /* TDProgressHUD.m in Sources */,
-				1F8A66F51B65C79E00F3380A /* TDProgressView.m in Sources */,
+				1FFF19F01B71EE8800A2504F /* ScreenUtil.m in Sources */,
+				1F8A66F51B65C79E00F3380A /* TDProgressCircleView.m in Sources */,
+				1FFF19F81B72EAAB00A2504F /* TDProgressView.m in Sources */,
 				1F8A66B81B62291500F3380A /* main.m in Sources */,
-				1F8A66EE1B65C27700F3380A /* TDLoaderBackgroundWindow.m in Sources */,
 				1F8DE4011B675AA300593688 /* TDAlertButtonItem.m in Sources */,
 				1F15EBDC1B6A176B006CF49A /* LayoutUtil.m in Sources */,
-				1F8A66DE1B622A2500F3380A /* TDAlertView.m in Sources */,
+				1FFF19FB1B72EACD00A2504F /* TDAlertView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

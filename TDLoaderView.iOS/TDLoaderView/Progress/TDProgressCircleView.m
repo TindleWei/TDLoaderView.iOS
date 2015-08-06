@@ -6,15 +6,15 @@
 //  Copyright (c) 2015年 tindle. All rights reserved.
 //
 
-#import "TDProgressView.h"
+#import "TDProgressCircleView.h"
 
-@interface TDProgressView ()
+@interface TDProgressCircleView ()
 
 @property (nonatomic, strong) CAShapeLayer *indefiniteAnimatedLayer;
 
 @end
 
-@implementation TDProgressView
+@implementation TDProgressCircleView
 
 //@synthesize strokeThickness;
 

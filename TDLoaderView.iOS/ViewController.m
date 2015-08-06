@@ -10,6 +10,7 @@
 #import "TDAlertView.h"
 #import "TDProgressHUD.h"
 #import "TDLoaderView.h"
+#import "TDProgressView.h"
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *btn;
@@ -25,7 +26,27 @@
 @implementation ViewController
 
 - (IBAction)action:(id)sender {
+//    [self alertTest];
+//    [self originTest];
+    [self progressTest];
+}
+
+- (void)progressTest{
+    if (_num%2==0) {
+        TDProgressView *view = [[TDProgressView alloc] initWithFrame:CGRectZero];
+        //view = [[TDProgressView alloc]initProgressWithStatus:@"Loading"];
+        [self.view addSubview:view];
+        [view show];
+    }else{
+        TDProgressView *view = [[TDProgressView alloc]initProgressWithStatus:@"Loading"];
+        [self.view addSubview:view];
+        [view show];
+    }
+    _num++;
     
+}
+
+- (void)originTest{
     if (_num%3==0) {
         _num++;
         if (!_loaderView) {
@@ -47,8 +68,28 @@
         _num++;
         return;
     }
+}
+
+- (void)alertTest{
+    TDAlertView *alertView = [[TDAlertView alloc] initWithTitle:@"Title1" andMessage:@"What are you doing, man, dude, guy, bro, friend, buddy?"];
+    [self.view addSubview:alertView];
     
-    
+    [alertView addButtonWithTitle:@"Button1"
+                             type:0
+                          handler:^(TDAlertView *alertView) {
+                              NSLog(@"Button1 Clicked");
+                          }];
+    [alertView addButtonWithTitle:@"Button2"
+                             type:1
+                          handler:^(TDAlertView *alertView) {
+                              NSLog(@"Button2 Clicked");
+                          }];
+//    [alertView addButtonWithTitle:@"Button3"
+//                             type:2
+//                          handler:^(TDAlertView *alertView) {
+//                              NSLog(@"Button3 Clicked");
+//                          }];
+    [alertView show];
 }
 
 - (void)startAnimation {

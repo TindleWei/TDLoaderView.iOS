@@ -7,13 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TDAlertView.h"
+#import "TDProgressView.h"
 
 extern UIWindowLevel const UIWindowLevelTDLoader;
 extern UIWindowLevel const UIWindowLevelTDLoaderBackground;
 
 typedef NS_ENUM(NSInteger, TDLoaderViewType){
     TDLoaderViewTypeProgress    = 0,
-    TDLoaderViewTypeLoader     = 1,
+    TDLoaderViewTypeLoad     = 1,
     TDLoaderViewTypeAlert       = 2,
     TDLoaderViewTypeToast      = 3
 };

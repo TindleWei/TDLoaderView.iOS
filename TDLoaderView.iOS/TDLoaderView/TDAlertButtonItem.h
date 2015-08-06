@@ -12,7 +12,7 @@
 @interface TDAlertButtonItem : NSObject
 
 @property (nonatomic, copy) NSString *title;
-@property (nonatomic, assign) TDLoaderViewTextType type;
+@property (nonatomic, assign) TDAlertButtonType type;
 @property (nonatomic, copy) TDLoaderViewHandler action;
 
 @end

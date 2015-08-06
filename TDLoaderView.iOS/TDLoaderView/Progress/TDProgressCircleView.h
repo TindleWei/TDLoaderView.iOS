@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TDProgressView : UIView
+@interface TDProgressCircleView : UIView
 
 @property (nonatomic, assign) CGFloat strokeThickness;
 @property (nonatomic, assign) CGFloat radius;
