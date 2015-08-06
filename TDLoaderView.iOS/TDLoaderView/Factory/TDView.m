@@ -25,7 +25,7 @@
 }
 
 - (CGSize)getSize{
-    return CGSizeMake(0, 0);
+    return CGSizeMake(100, 100);
 }
 
 # pragma mark - Setup Views

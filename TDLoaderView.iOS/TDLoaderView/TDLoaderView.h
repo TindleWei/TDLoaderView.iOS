@@ -14,10 +14,11 @@ extern UIWindowLevel const UIWindowLevelTDLoader;
 extern UIWindowLevel const UIWindowLevelTDLoaderBackground;
 
 typedef NS_ENUM(NSInteger, TDLoaderViewType){
-    TDLoaderViewTypeProgress    = 0,
-    TDLoaderViewTypeLoad     = 1,
-    TDLoaderViewTypeAlert       = 2,
-    TDLoaderViewTypeToast      = 3
+    TDLoaderViewTypeNone        = 0,
+    TDLoaderViewTypeProgress    = 1,
+    TDLoaderViewTypeLoad        = 2,
+    TDLoaderViewTypeAlert       = 3,
+    TDLoaderViewTypeToast       = 4
 };
 
 typedef NS_ENUM(NSInteger, TDLoaderBootsType){
@@ -29,19 +30,21 @@ typedef NS_ENUM(NSInteger, TDLoaderBootsType){
 
 @interface TDLoaderView : UIView
 
-@property (nonatomic, assign, getter = isVisible) BOOL visible;
+- (void)initProgressWithStatus:(NSString *)status;
+- (void)initAlertWithTitle:(NSString *)title andMessage:(NSString *)message;
 
-- (id)initProgressWithStatus:(NSString *)status;
 - (id)initLoaderWithStatus:(NSString *)status;
-- (id)initAlertWithStatus:(NSString *)status;
 - (id)initToastWithStatus:(NSString *)status;
 
 - (void)show;
-- (void)changeViewType:(TDLoaderViewType)type;
-- (void)setBootsType:(TDLoaderBootsType)type;
-- (void)dismissAnimated:(BOOL)animated;
+- (void)dismiss;
+- (void)changeViewWithType:(TDLoaderViewType)type;
 
-- (void)setProgressStatus:(NSString *)status;
+- (TDAlertView *)alertView;
+- (TDProgressView *)progressView;
+
+- (void)setBootsType:(TDLoaderBootsType)type;
+
 
 
 @end

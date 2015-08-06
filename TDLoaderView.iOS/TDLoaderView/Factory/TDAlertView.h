@@ -28,6 +28,7 @@ typedef void (^TDLoaderViewHandler)(TDAlertView *loaderView);
 @interface TDAlertView : TDView
 
 - (id)initWithTitle:(NSString *)title andMessage:(NSString *)message;
+- (void)setTitle:(NSString *)title andMessage:(NSString *)message;
 - (void)addButtonWithTitle:(NSString *)title type:(TDAlertButtonType)type handler:(TDLoaderViewHandler)handler;
 
 

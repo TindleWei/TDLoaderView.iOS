@@ -27,13 +27,17 @@
 
 #pragma mark - Public Method
 
-- (id)initProgressWithStatus:(NSString *)status{
+- (id)initWithStatus:(NSString *)status{
     debugMethod();
     self = [super init];
     if (self) {
         self.status = status;
     }
     return self;
+}
+
+- (void)setWithStatus:(NSString *)status{
+    self.status = status;
 }
 
 - (void)create{
@@ -43,6 +47,7 @@
 - (void)show{
     debugMethod();
     [self initViews];
+    
     [self validateLayout];
 }
 
@@ -51,7 +56,7 @@
 }
 
 - (CGSize)getSize{
-    return CGSizeMake(0, 0);
+    return CGSizeMake(VIEW_SIZE, VIEW_SIZE);
 }
 
 - (void)setProgressStatus:(NSString *)status{
@@ -84,24 +89,16 @@
         
          _statusLabel.textColor = [UIColor blackColor];
     }
-    
-   
-    
 }
 
 # pragma mark - Validate Layout
 
 - (void)validateLayout{
     
-    CGFloat screenWidth = [UIScreen mainScreen].applicationFrame.size.width;
-    CGFloat screenHeight = [UIScreen mainScreen].applicationFrame.size.height -[UIApplication sharedApplication].statusBarFrame.size.height;
-    
     CGFloat height = [self layoutHeight];
-    CGFloat left = (screenWidth - VIEW_SIZE) * 0.5;
-    CGFloat top = (screenHeight - height) * 0.5;
     
     self.transform = CGAffineTransformIdentity;
-    self.frame = CGRectMake(left, top, VIEW_SIZE, height);
+    self.frame = CGRectMake(0, 0, VIEW_SIZE, height);
     self.backgroundColor = [UIColor whiteColor];
     
     CGFloat offsetX = (VIEW_SIZE - PROGRESS_SIZE)/2;

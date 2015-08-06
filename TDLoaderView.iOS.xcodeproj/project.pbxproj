@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F15EBDC1B6A176B006CF49A /* LayoutUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F15EBDB1B6A176B006CF49A /* LayoutUtil.m */; };
 		1F8A66B81B62291500F3380A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A66B71B62291500F3380A /* main.m */; };
 		1F8A66BB1B62291500F3380A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A66BA1B62291500F3380A /* AppDelegate.m */; };
 		1F8A66BE1B62291500F3380A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A66BD1B62291500F3380A /* ViewController.m */; };
@@ -41,8 +40,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1F15EBDA1B6A176B006CF49A /* LayoutUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayoutUtil.h; sourceTree = "<group>"; };
-		1F15EBDB1B6A176B006CF49A /* LayoutUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayoutUtil.m; sourceTree = "<group>"; };
 		1F8A66B21B62291500F3380A /* TDLoaderView.iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TDLoaderView.iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F8A66B61B62291500F3380A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F8A66B71B62291500F3380A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -165,15 +162,13 @@
 		1F8A66DB1B6229D500F3380A /* TDLoaderView */ = {
 			isa = PBXGroup;
 			children = (
+				1F8A66F91B663B1300F3380A /* SVProgressHUD.bundle */,
 				1FFF19ED1B71EE6D00A2504F /* Util */,
 				1FFF19EC1B71D81200A2504F /* ModelView */,
 				1FFF19E81B71CCFD00A2504F /* Factory */,
-				1F8A66F91B663B1300F3380A /* SVProgressHUD.bundle */,
 				1F8A66F21B65C78300F3380A /* Progress */,
 				1F8DE4021B675B4400593688 /* TDLoaderView.h */,
 				1F8DE4031B675B4400593688 /* TDLoaderView.m */,
-				1F15EBDA1B6A176B006CF49A /* LayoutUtil.h */,
-				1F15EBDB1B6A176B006CF49A /* LayoutUtil.m */,
 			);
 			path = TDLoaderView;
 			sourceTree = "<group>";
@@ -342,7 +337,6 @@
 				1FFF19F81B72EAAB00A2504F /* TDProgressView.m in Sources */,
 				1F8A66B81B62291500F3380A /* main.m in Sources */,
 				1F8DE4011B675AA300593688 /* TDAlertButtonItem.m in Sources */,
-				1F15EBDC1B6A176B006CF49A /* LayoutUtil.m in Sources */,
 				1FFF19FB1B72EACD00A2504F /* TDAlertView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

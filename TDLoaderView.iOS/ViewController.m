@@ -27,8 +27,46 @@
 
 - (IBAction)action:(id)sender {
 //    [self alertTest];
-//    [self originTest];
-    [self progressTest];
+    [self originTest];
+//    [self progressTest];
+}
+
+- (void)originTest{
+    if (_num%3==0) {
+        _num++;
+        if (!_loaderView) {
+            _loaderView = [[TDLoaderView alloc] initWithFrame:CGRectZero];
+            [self.view addSubview:_loaderView];
+        }
+        [_loaderView changeViewWithType:TDLoaderViewTypeProgress];
+        [_loaderView show];
+        
+    }else if(_num%3==1){
+        
+        [[_loaderView alertView] addButtonWithTitle:@"Button1"
+                                             type:0
+                                          handler:^(TDAlertView *alertView) {
+                                              NSLog(@"Button1 Clicked");
+                                          }];
+        [[_loaderView alertView] addButtonWithTitle:@"Button2"
+                                             type:1
+                                          handler:^(TDAlertView *alertView) {
+                                              NSLog(@"Button2 Clicked");
+                                          }];
+        [_loaderView changeViewWithType:TDLoaderViewTypeAlert];
+        
+        
+        [_loaderView show];
+        
+        _num++;
+        return;
+    }else{
+
+        [_loaderView removeFromSuperview];
+        _loaderView = nil;
+        _num++;
+        return;
+    }
 }
 
 - (void)progressTest{
@@ -38,36 +76,12 @@
         [self.view addSubview:view];
         [view show];
     }else{
-        TDProgressView *view = [[TDProgressView alloc]initProgressWithStatus:@"Loading"];
+        TDProgressView *view = [[TDProgressView alloc]initWithStatus:@"Loading"];
         [self.view addSubview:view];
         [view show];
     }
     _num++;
     
-}
-
-- (void)originTest{
-    if (_num%3==0) {
-        _num++;
-        if (!_loaderView) {
-            _loaderView = [[TDLoaderView alloc] initWithFrame:CGRectZero];
-            //_loaderView = [[TDLoaderView alloc]initProgressWithStatus:@"Loading"];
-            [self.view addSubview:_loaderView];
-        }
-        
-        [_loaderView setProgressStatus:@"正在加载中"];
-        [_loaderView show];
-        
-    }else if(_num%3==1){
-        [_loaderView changeViewType:TDLoaderViewTypeAlert];
-        _num++;
-        return;
-    }else{
-        [_loaderView removeFromSuperview];
-        _loaderView = nil;
-        _num++;
-        return;
-    }
 }
 
 - (void)alertTest{

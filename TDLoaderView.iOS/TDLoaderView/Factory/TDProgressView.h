@@ -10,6 +10,7 @@
 
 @interface TDProgressView : TDView
 
-- (id)initProgressWithStatus:(NSString *)status;
+- (id)initWithStatus:(NSString *)status;
+- (void)setWithStatus:(NSString *)status;
 
 @end

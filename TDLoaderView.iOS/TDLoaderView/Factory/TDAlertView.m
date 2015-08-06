@@ -52,6 +52,12 @@ NSString *const TDLoaderViewWillDismissNofification = @"TDLoaderViewWillDismissN
     return self;
 }
 
+- (void)setTitle:(NSString *)title andMessage:(NSString *)message{
+    _title = title;
+    _message = message;
+
+}
+
 # pragma mark - Public Method
 
 - (void)show{
@@ -163,16 +169,12 @@ NSString *const TDLoaderViewWillDismissNofification = @"TDLoaderViewWillDismissN
 
 - (void)validateLayout{
     debugMethod();
-    CGFloat screenWidth = [ScreenUtil getScreenWidth];
-    CGFloat screenHeight = [ScreenUtil getScreenHeightWithoutStatusbar];
     
     CGFloat height = [self layoutHeight];
-    CGFloat left = (screenWidth - VIEW_WIDTH) * 0.5;
-    CGFloat top = (screenHeight - height) * 0.5;
     
     self.transform = CGAffineTransformIdentity;
-    self.frame = CGRectMake(left, top, VIEW_WIDTH, height);
-    self.backgroundColor = [UIColor greenColor];
+    self.frame = CGRectMake(0, 0, VIEW_WIDTH, height);
+    self.backgroundColor = [UIColor whiteColor];
     
     CGFloat y = PADDING_TOP;
     if (self.titleLabel) {
