@@ -47,7 +47,6 @@
 - (void)show{
     debugMethod();
     [self initViews];
-    
     [self validateLayout];
 }
 
@@ -83,8 +82,8 @@
         _statusLabel.textAlignment = NSTextAlignmentCenter;
         _statusLabel.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
         _statusLabel.numberOfLines = 1;
-        _statusLabel.adjustsFontSizeToFitWidth      = NO;
-        _statusLabel.font = [UIFont fontWithName:@"Helvetica" size:14];
+        _statusLabel.adjustsFontSizeToFitWidth = NO;
+        _statusLabel.font = [UIFont systemFontOfSize:14];
         [self addSubview:_statusLabel];
         
          _statusLabel.textColor = [UIColor blackColor];
@@ -99,7 +98,7 @@
     
     self.transform = CGAffineTransformIdentity;
     self.frame = CGRectMake(0, 0, VIEW_SIZE, height);
-    self.backgroundColor = [UIColor whiteColor];
+    self.backgroundColor = [UIColor clearColor];
     
     CGFloat offsetX = (VIEW_SIZE - PROGRESS_SIZE)/2;
     CGFloat offsetY = (VIEW_SIZE - PROGRESS_SIZE)/2;

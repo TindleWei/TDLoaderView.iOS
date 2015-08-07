@@ -15,9 +15,9 @@ NSString *const TDLoaderViewWillDismissNofification = @"TDLoaderViewWillDismissN
 #define DEBUG_LAYOUT 0
 
 #define PADDING_GAP 10
-#define PADDING_TOP 32
+#define PADDING_TOP 26
 #define PADDING_LEFT 10
-#define PADDING_BOTTOM 10
+#define PADDING_BOTTOM 14
 #define BUTTON_HEIGHT 44
 #define VIEW_WIDTH 300
 
@@ -89,10 +89,9 @@ NSString *const TDLoaderViewWillDismissNofification = @"TDLoaderViewWillDismissN
         self.titleLabel.textAlignment = NSTextAlignmentCenter;
         self.titleLabel.backgroundColor = [UIColor clearColor];
         self.titleLabel.adjustsFontSizeToFitWidth = YES;
-        self.titleLabel.minimumFontSize = self.titleLabel.font.pointSize * 0.75;
+        self.titleLabel.font = [UIFont systemFontOfSize:20];
+        self.titleLabel.text = @"";
         [self addSubview:self.titleLabel];
-        
-        self.titleLabel.text = @"Hi, Title";
     }
     
     if (!self.messageLabel) {
@@ -100,9 +99,9 @@ NSString *const TDLoaderViewWillDismissNofification = @"TDLoaderViewWillDismissN
         self.messageLabel.textAlignment = NSTextAlignmentCenter;
         self.messageLabel.backgroundColor = [UIColor clearColor];
         self.messageLabel.numberOfLines = 3;
+        self.messageLabel.text = @"";
+        self.messageLabel.font = [UIFont systemFontOfSize:16];
         [self addSubview:self.messageLabel];
-        
-        self.messageLabel.text = @"Is there any questions?";
     }
     
     self.buttons = [[NSMutableArray alloc] initWithCapacity:self.modelItems.count];
@@ -111,7 +110,6 @@ NSString *const TDLoaderViewWillDismissNofification = @"TDLoaderViewWillDismissN
         [self.buttons addObject:button];
         [self addSubview:button];
     }
-    
     
 }
 
@@ -238,6 +236,8 @@ NSString *const TDLoaderViewWillDismissNofification = @"TDLoaderViewWillDismissN
     }
     
     height += PADDING_BOTTOM;
+    
+    NSLog(@"alert height: %f", height);
     
     return height;
 }

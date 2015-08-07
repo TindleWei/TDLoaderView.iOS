@@ -38,28 +38,27 @@
             [self.view addSubview:_loaderView];
         }
         [_loaderView changeViewWithType:TDLoaderViewTypeProgress];
+        [[_loaderView progressView] setWithStatus:@"Checking"];
         [_loaderView show];
         
     }else if(_num%3==1){
-        
-        
+  
         [_loaderView changeViewWithType:TDLoaderViewTypeAlert];
-        [[_loaderView alertView] addButtonWithTitle:@"Button1"
+        [[_loaderView alertView] setTitle:@"Error" andMessage:@"What have you done?"];
+        [[_loaderView alertView] addButtonWithTitle:@"Next"
                                                type:0
                                             handler:^(TDAlertView *alertView) {
-                                                NSLog(@"Button1 Clicked");
+                                                [_loaderView changeViewWithType:TDLoaderViewTypeProgress];
+                                                [[_loaderView progressView] setWithStatus:@"Loading"];
+                                                [_loaderView show];
                                             }];
-        [[_loaderView alertView] addButtonWithTitle:@"Button2"
+        [[_loaderView alertView] addButtonWithTitle:@"Cancel"
                                                type:1
                                             handler:^(TDAlertView *alertView) {
                                                 NSLog(@"Button2 Clicked");
                                             }];
-        [[_loaderView alertView] addButtonWithTitle:@"Button3"
-                                               type:1
-                                            handler:^(TDAlertView *alertView) {
-                                                NSLog(@"Button3 Clicked");
-                                            }];
         [_loaderView show];
+        [_loaderView resizeLayout];
         
         _num++;
         return;

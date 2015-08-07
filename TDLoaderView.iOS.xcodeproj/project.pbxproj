@@ -19,7 +19,6 @@
 		1F8A66E41B64E7C300F3380A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8A66E31B64E7C300F3380A /* Foundation.framework */; };
 		1F8A66E81B64E80E00F3380A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8A66E51B64E7D200F3380A /* CoreGraphics.framework */; };
 		1F8A66F51B65C79E00F3380A /* TDProgressCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A66F41B65C79E00F3380A /* TDProgressCircleView.m */; };
-		1F8A66F81B66238100F3380A /* TDProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A66F71B66238100F3380A /* TDProgressHUD.m */; };
 		1F8A66FA1B663B1300F3380A /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1F8A66F91B663B1300F3380A /* SVProgressHUD.bundle */; };
 		1F8DE4011B675AA300593688 /* TDAlertButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DE4001B675AA300593688 /* TDAlertButtonItem.m */; };
 		1F8DE4041B675B4400593688 /* TDLoaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8DE4031B675B4400593688 /* TDLoaderView.m */; };
@@ -59,8 +58,6 @@
 		1F8A66E51B64E7D200F3380A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		1F8A66F31B65C79E00F3380A /* TDProgressCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDProgressCircleView.h; sourceTree = "<group>"; };
 		1F8A66F41B65C79E00F3380A /* TDProgressCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDProgressCircleView.m; sourceTree = "<group>"; };
-		1F8A66F61B66238100F3380A /* TDProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDProgressHUD.h; sourceTree = "<group>"; };
-		1F8A66F71B66238100F3380A /* TDProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDProgressHUD.m; sourceTree = "<group>"; };
 		1F8A66F91B663B1300F3380A /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		1F8DE3FF1B675AA300593688 /* TDAlertButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDAlertButtonItem.h; sourceTree = "<group>"; };
 		1F8DE4001B675AA300593688 /* TDAlertButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDAlertButtonItem.m; sourceTree = "<group>"; };
@@ -189,8 +186,6 @@
 			children = (
 				1F8A66F31B65C79E00F3380A /* TDProgressCircleView.h */,
 				1F8A66F41B65C79E00F3380A /* TDProgressCircleView.m */,
-				1F8A66F61B66238100F3380A /* TDProgressHUD.h */,
-				1F8A66F71B66238100F3380A /* TDProgressHUD.m */,
 			);
 			path = Progress;
 			sourceTree = "<group>";
@@ -331,7 +326,6 @@
 				1FFF19F21B726DAE00A2504F /* TDView.m in Sources */,
 				1F8A66BB1B62291500F3380A /* AppDelegate.m in Sources */,
 				1F8DE4041B675B4400593688 /* TDLoaderView.m in Sources */,
-				1F8A66F81B66238100F3380A /* TDProgressHUD.m in Sources */,
 				1FFF19F01B71EE8800A2504F /* ScreenUtil.m in Sources */,
 				1F8A66F51B65C79E00F3380A /* TDProgressCircleView.m in Sources */,
 				1FFF19F81B72EAAB00A2504F /* TDProgressView.m in Sources */,

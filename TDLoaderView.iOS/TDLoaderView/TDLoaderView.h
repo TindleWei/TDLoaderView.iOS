@@ -40,6 +40,8 @@ typedef NS_ENUM(NSInteger, TDLoaderBootsType){
 - (void)dismiss;
 - (void)changeViewWithType:(TDLoaderViewType)type;
 
+- (void)resizeLayout;
+
 - (TDAlertView *)alertView;
 - (TDProgressView *)progressView;
 

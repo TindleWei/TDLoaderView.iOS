@@ -36,14 +36,14 @@ const UIWindowLevel UIWindowLevelTDLoaderBackground = 1985.0; // below the alert
 
 - (void)initProgressWithStatus:(NSString *)status{
     
-    [self.progressView setWithStatus:status];
+    [self progressView];
     _currentViewType = TDLoaderViewTypeProgress;
     _currentView = self.progressView;
 }
 
 - (void)initAlertWithTitle:(NSString *)title andMessage:(NSString *)message{
     
-    [self.alertView setTitle:title andMessage:message];
+    [self alertView];
     _currentViewType = TDLoaderViewTypeAlert;
     _currentView = self.alertView;
 }
@@ -67,7 +67,8 @@ const UIWindowLevel UIWindowLevelTDLoaderBackground = 1985.0; // below the alert
             switch (type) {
                 case TDLoaderViewTypeProgress:{
                     
-                    [self initProgressWithStatus:@"changed"];
+                    [self initProgressWithStatus:@""];
+                    
                     [self show];
                     
                     CGFloat viewW = [self getSize].width;
@@ -82,9 +83,9 @@ const UIWindowLevel UIWindowLevelTDLoaderBackground = 1985.0; // below the alert
                 }
                 case TDLoaderViewTypeAlert:{
                     
-                    [self initAlertWithTitle:@"change" andMessage:@"now"];
+                    [self initAlertWithTitle:@"" andMessage:@""];
                     [self show];
-                    
+
                     CGFloat viewW = [self getSize].width;
                     CGFloat viewH = [self getSize].height;
                     CGFloat screenW = [ScreenUtil getScreenWidth];
@@ -92,6 +93,7 @@ const UIWindowLevel UIWindowLevelTDLoaderBackground = 1985.0; // below the alert
                     
                     self.containerView.frame = CGRectMake((screenW - viewW) * 0.5, (screenH - viewH) * 0.5, viewW, viewH);
                     [self resizeLoaderWithFrame:self.containerView.frame];
+                    
                     break;
                 }
                 case TDLoaderViewTypeLoad:{
@@ -112,14 +114,32 @@ const UIWindowLevel UIWindowLevelTDLoaderBackground = 1985.0; // below the alert
 
 - (void)show{
     [_currentView show];
+    _currentView.alpha = 1.0f;
 }
 
 - (CGSize)getSize{
     return [_currentView getSize];
 }
 
+- (void)tearDown{
+    for (UIView *view in _currentView.subviews) {
+        [view removeFromSuperview];
+        
+    }
+}
+
 - (void)dismiss{
     
+}
+
+- (void)resizeLayout{
+    CGFloat viewW = [self getSize].width;
+    CGFloat viewH = [self getSize].height;
+    CGFloat screenW = [ScreenUtil getScreenWidth];
+    CGFloat screenH = [ScreenUtil getScreenHeightWithoutStatusbar];
+    
+    self.containerView.frame = CGRectMake((screenW - viewW) * 0.5, (screenH - viewH) * 0.5, viewW, viewH);
+    [self resizeLoaderWithFrame:self.containerView.frame];
 }
 
 #pragma mark - Layout
@@ -137,6 +157,12 @@ const UIWindowLevel UIWindowLevelTDLoaderBackground = 1985.0; // below the alert
 - (void)overlayViewDidReceiveTouchEvent:(id)sender forEvent:(UIEvent *)event {
     debugMethod();
     
+}
+
+- (void)loaderAction:(id)sender{
+    [self changeViewWithType:TDLoaderViewTypeAlert];
+    [[self alertView] setTitle:@"Error" andMessage:@"What have you done?"];
+    [self show];
 }
 
 #pragma mark - Getters
@@ -161,12 +187,16 @@ const UIWindowLevel UIWindowLevelTDLoaderBackground = 1985.0; // below the alert
         CGFloat top = (screenHeight - 100) * 0.5;
         
         _containerView = [[UIView alloc] initWithFrame:CGRectMake(left, top, 100, 100)];
-        _containerView.backgroundColor = [UIColor greenColor];
+        _containerView.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1];
         _containerView.layer.cornerRadius = 10;
         _containerView.layer.masksToBounds = YES;
         _containerView.autoresizingMask = (UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleTopMargin |
                                      UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin);
 
+        _containerView.userInteractionEnabled = YES;
+        UITapGestureRecognizer*tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(loaderAction:)];
+        
+        [_containerView addGestureRecognizer:tapGesture];
     }
     
     if(!_containerView.superview){
@@ -178,16 +208,25 @@ const UIWindowLevel UIWindowLevelTDLoaderBackground = 1985.0; // below the alert
 - (TDAlertView *)alertView{
     if (!_alertView) {
         _alertView = [[TDAlertView alloc] initWithTitle:@"" andMessage:@""];
-        [self.containerView addSubview:self.alertView];
+        [self.containerView addSubview:_alertView];
+    }
+    if (_alertView.superview != self.containerView) {
+        _alertView.alpha = 0.0f;
+        [self.containerView addSubview:_alertView];
     }
     return _alertView;
 }
 
 - (TDProgressView *)progressView{
     if (!_progressView) {
-        _progressView = [[TDProgressView alloc] initWithFrame:CGRectZero];
-        [self.containerView addSubview:self.progressView];
+        _progressView = [[TDProgressView alloc] initWithStatus:@""];
+        [self.containerView addSubview:_progressView];
     }
+    if (_progressView.superview != self.containerView) {
+        _progressView.alpha = 0.0f;
+        [self.containerView addSubview:_progressView];
+    }
+    
     return _progressView;
 }
 
