@@ -9,8 +9,6 @@
 #import "TDAlertView.h"
 #import "ScreenUtil.h"
 
-#define debugMethod() NSLog(@"%s", __func__)
-
 NSString *const TDLoaderViewWillShowNotification = @"TDLoaderViewWillShowNotification";
 NSString *const TDLoaderViewWillDismissNofification = @"TDLoaderViewWillDismissNofification";
 
@@ -113,6 +111,8 @@ NSString *const TDLoaderViewWillDismissNofification = @"TDLoaderViewWillDismissN
         [self.buttons addObject:button];
         [self addSubview:button];
     }
+    
+    
 }
 
 
@@ -126,42 +126,42 @@ NSString *const TDLoaderViewWillDismissNofification = @"TDLoaderViewWillDismissN
     [button setTitle:item.title forState:UIControlStateNormal];
     
     UIColor *buttonColor = [UIColor colorWithWhite:0.4 alpha:1];
-    UIColor *cancelButtonColor = [UIColor colorWithWhite:0.3 alpha:1];
-    UIColor *destructiveButtonColor = [UIColor whiteColor];
     
-    UIImage *normalImage = nil;
-    UIImage *highlightedImage = nil;
     switch (item.type) {
         case 0:
-            normalImage = [UIImage imageNamed:@"SIAlertView.bundle/button-cancel"];
-            highlightedImage = [UIImage imageNamed:@"SIAlertView.bundle/button-cancel-d"];
-            [button setTitleColor:cancelButtonColor forState:UIControlStateNormal];
-            [button setTitleColor:[cancelButtonColor colorWithAlphaComponent:0.8] forState:UIControlStateHighlighted];
+            [button setTitleColor:buttonColor forState:UIControlStateNormal];
+            [button setTitleColor:[buttonColor colorWithAlphaComponent:0.8] forState:UIControlStateHighlighted];
             break;
         case 1:
-            normalImage = [UIImage imageNamed:@"SIAlertView.bundle/button-destructive"];
-            highlightedImage = [UIImage imageNamed:@"SIAlertView.bundle/button-destructive-d"];
-            [button setTitleColor:destructiveButtonColor forState:UIControlStateNormal];
-            [button setTitleColor:[destructiveButtonColor colorWithAlphaComponent:0.8] forState:UIControlStateHighlighted];
+            [button setTitleColor:buttonColor forState:UIControlStateNormal];
+            [button setTitleColor:[buttonColor colorWithAlphaComponent:0.8] forState:UIControlStateHighlighted];
             break;
         case 2:
         default:
-            normalImage = [UIImage imageNamed:@"SIAlertView.bundle/button-default"];
-            highlightedImage = [UIImage imageNamed:@"SIAlertView.bundle/button-default-d"];
             [button setTitleColor:buttonColor forState:UIControlStateNormal];
             [button setTitleColor:[buttonColor colorWithAlphaComponent:0.8] forState:UIControlStateHighlighted];
             break;
     }
-    CGFloat hInset = floorf(normalImage.size.width / 2);
-    CGFloat vInset = floorf(normalImage.size.height / 2);
-    UIEdgeInsets insets = UIEdgeInsetsMake(vInset, hInset, vInset, hInset);
-    normalImage = [normalImage resizableImageWithCapInsets:insets];
-    highlightedImage = [highlightedImage resizableImageWithCapInsets:insets];
-    [button setBackgroundImage:normalImage forState:UIControlStateNormal];
-    [button setBackgroundImage:highlightedImage forState:UIControlStateHighlighted];
+
+    [button setBackgroundImage:[self imageWithColor:[UIColor yellowColor]] forState:UIControlStateNormal];
+    [button setBackgroundImage:[self imageWithColor:[UIColor redColor]] forState:UIControlStateHighlighted];
     [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
     
     return button;
+}
+
+- (UIImage *)imageWithColor:(UIColor *)color {
+    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return image;
 }
 
 
@@ -174,7 +174,7 @@ NSString *const TDLoaderViewWillDismissNofification = @"TDLoaderViewWillDismissN
     
     self.transform = CGAffineTransformIdentity;
     self.frame = CGRectMake(0, 0, VIEW_WIDTH, height);
-    self.backgroundColor = [UIColor whiteColor];
+    self.backgroundColor = [UIColor clearColor];
     
     CGFloat y = PADDING_TOP;
     if (self.titleLabel) {
@@ -310,6 +310,7 @@ NSString *const TDLoaderViewWillDismissNofification = @"TDLoaderViewWillDismissN
 
 - (void)buttonAction:(UIButton *)button
 {
+    debugMethod();
     //[self setAnimating:YES]; // set this flag to YES in order to prevent showing another alert in action block
     TDAlertButtonItem *item = self.modelItems[button.tag];
     if (item.action) {

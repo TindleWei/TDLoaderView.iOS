@@ -27,12 +27,12 @@ const UIWindowLevel UIWindowLevelTDLoaderBackground = 1985.0; // below the alert
 
 @implementation TDLoaderView
 
-+ (TDLoaderView*)sharedView {
-    static dispatch_once_t once;
-    static TDLoaderView *sharedView;
-    dispatch_once(&once, ^ { sharedView = [[self alloc] initWithFrame:[UIApplication sharedApplication].keyWindow.bounds]; });
-    return sharedView;
-}
+//+ (TDLoaderView*)sharedView {
+//    static dispatch_once_t once;
+//    static TDLoaderView *sharedView;
+//    dispatch_once(&once, ^ { sharedView = [[self alloc] initWithFrame:[UIApplication sharedApplication].keyWindow.bounds]; });
+//    return sharedView;
+//}
 
 - (void)initProgressWithStatus:(NSString *)status{
     
@@ -76,6 +76,7 @@ const UIWindowLevel UIWindowLevelTDLoaderBackground = 1985.0; // below the alert
                     CGFloat screenH = [ScreenUtil getScreenHeightWithoutStatusbar];
                     
                     self.containerView.frame = CGRectMake((screenW - viewW) * 0.5, (screenH - viewH) * 0.5, viewW, viewH);
+                    [self resizeLoaderWithFrame:self.containerView.frame];
                     
                     break;
                 }
@@ -90,6 +91,7 @@ const UIWindowLevel UIWindowLevelTDLoaderBackground = 1985.0; // below the alert
                     CGFloat screenH = [ScreenUtil getScreenHeightWithoutStatusbar];
                     
                     self.containerView.frame = CGRectMake((screenW - viewW) * 0.5, (screenH - viewH) * 0.5, viewW, viewH);
+                    [self resizeLoaderWithFrame:self.containerView.frame];
                     break;
                 }
                 case TDLoaderViewTypeLoad:{
@@ -120,6 +122,15 @@ const UIWindowLevel UIWindowLevelTDLoaderBackground = 1985.0; // below the alert
     
 }
 
+#pragma mark - Layout
+
+/**
+ fixed bug: resize the scope of superview action frame
+ @date: 2015-8-17
+ */
+- (void)resizeLoaderWithFrame:(CGRect) rect{
+    self.frame = rect;
+}
 
 #pragma mark - Actions
 
@@ -150,22 +161,23 @@ const UIWindowLevel UIWindowLevelTDLoaderBackground = 1985.0; // below the alert
         CGFloat top = (screenHeight - 100) * 0.5;
         
         _containerView = [[UIView alloc] initWithFrame:CGRectMake(left, top, 100, 100)];
-        _containerView.backgroundColor = [UIColor whiteColor];
-        _containerView.layer.cornerRadius = 4;
+        _containerView.backgroundColor = [UIColor greenColor];
+        _containerView.layer.cornerRadius = 10;
         _containerView.layer.masksToBounds = YES;
         _containerView.autoresizingMask = (UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleTopMargin |
                                      UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin);
+
     }
     
-    if(!_containerView.superview)
+    if(!_containerView.superview){
         [self addSubview:_containerView];
-    
+    }
     return _containerView;
 }
 
 - (TDAlertView *)alertView{
     if (!_alertView) {
-        _alertView = [[TDAlertView alloc] initWithFrame:CGRectZero];
+        _alertView = [[TDAlertView alloc] initWithTitle:@"" andMessage:@""];
         [self.containerView addSubview:self.alertView];
     }
     return _alertView;

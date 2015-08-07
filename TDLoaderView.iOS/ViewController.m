@@ -8,7 +8,6 @@
 
 #import "ViewController.h"
 #import "TDAlertView.h"
-#import "TDProgressHUD.h"
 #import "TDLoaderView.h"
 #import "TDProgressView.h"
 
@@ -43,19 +42,23 @@
         
     }else if(_num%3==1){
         
-        [[_loaderView alertView] addButtonWithTitle:@"Button1"
-                                             type:0
-                                          handler:^(TDAlertView *alertView) {
-                                              NSLog(@"Button1 Clicked");
-                                          }];
-        [[_loaderView alertView] addButtonWithTitle:@"Button2"
-                                             type:1
-                                          handler:^(TDAlertView *alertView) {
-                                              NSLog(@"Button2 Clicked");
-                                          }];
+        
         [_loaderView changeViewWithType:TDLoaderViewTypeAlert];
-        
-        
+        [[_loaderView alertView] addButtonWithTitle:@"Button1"
+                                               type:0
+                                            handler:^(TDAlertView *alertView) {
+                                                NSLog(@"Button1 Clicked");
+                                            }];
+        [[_loaderView alertView] addButtonWithTitle:@"Button2"
+                                               type:1
+                                            handler:^(TDAlertView *alertView) {
+                                                NSLog(@"Button2 Clicked");
+                                            }];
+        [[_loaderView alertView] addButtonWithTitle:@"Button3"
+                                               type:1
+                                            handler:^(TDAlertView *alertView) {
+                                                NSLog(@"Button3 Clicked");
+                                            }];
         [_loaderView show];
         
         _num++;
@@ -106,10 +109,6 @@
     [alertView show];
 }
 
-- (void)startAnimation {
-    NSLog(@"startAnimation self");
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -117,20 +116,6 @@
     
     _num = 0;
     
-//    CGRect viewRect = CGRectMake(50,100,200,200);
-//    
-//    self.myView= [[UIView alloc] initWithFrame:viewRect];
-//    self.myView.backgroundColor = [UIColor whiteColor];
-//    
-//    [self.view addSubview:self.myView];
-    
-    
-    
-}
-
--(void)viewDidAppear:(BOOL)animated{
-    //[TDProgressHUD show];
-    //[TDProgressHUD showWithStatus:@"Doing Stuff"];
 }
 
 - (void)alert2
@@ -151,43 +136,5 @@
     [alertView show];
     
 }
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
-    return YES;
-}
-
-
-#pragma mark - Notification Methods Sample
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(handleNotification:)
-                                                 name:SVProgressHUDWillAppearNotification
-                                               object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(handleNotification:)
-                                                 name:SVProgressHUDDidAppearNotification
-                                               object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(handleNotification:)
-                                                 name:SVProgressHUDWillDisappearNotification
-                                               object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(handleNotification:)
-                                                 name:SVProgressHUDDidDisappearNotification
-                                               object:nil];
-}
-
-- (void)handleNotification:(NSNotification *)notif
-{
-    NSLog(@"Notification recieved: %@", notif.name);
-    NSLog(@"Status user info key: %@", [notif.userInfo objectForKey:SVProgressHUDStatusUserInfoKey]);
-}
-
 
 @end
